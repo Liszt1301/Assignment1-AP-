@@ -1,0 +1,17 @@
+
+public class Swimming extends Game {
+	
+	public void showResult() {
+		System.out.println("Swimming result: ");
+		super.showResult();
+		
+	}
+	
+	
+	public void start() {
+		// TODO Auto-generated method stub
+		System.out.println("Start the swimming");
+		super.start();
+	}
+
+}

@@ -1,0 +1,167 @@
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Ozlympic {
+	
+	private ArrayList<Athlete> all;
+	private ArrayList<Athlete> swimmers;
+	private ArrayList<Athlete> sprinters;
+	private ArrayList<Athlete> cyclists;
+	
+	private Swimming swimmingGame;
+	private Running runningGame;
+	private Cycling cyclingGame;
+	
+	
+	public Ozlympic() {
+		swimmers = new ArrayList<Athlete>();
+		sprinters = new ArrayList<Athlete>();
+		cyclists = new ArrayList<Athlete>();
+		all = new ArrayList<Athlete>();
+		
+		swimmers.add(new Swimmer("S01", "John", 20, "US"));
+		swimmers.add(new Swimmer("S02", "Sam", 21, "AU"));
+		swimmers.add(new Swimmer("S03", "Peter", 20, "CA"));
+		swimmers.add(new Swimmer("S04", "Jim", 22, "CN"));
+		swimmers.add(new Swimmer("S05", "Jeo", 19, "US"));
+		
+		
+		sprinters.add(new Sprinter("R01", "Kate", 20, "US"));
+		sprinters.add(new Sprinter("R02", "Kitty", 21, "AU"));
+		sprinters.add(new Sprinter("R03", "Rose", 20, "CA"));
+		sprinters.add(new Sprinter("R04", "Jack", 22, "CN"));
+		
+		
+		cyclists.add(new Cyclist("C01", "Tom", 20, "US"));
+		cyclists.add(new Cyclist("C02", "Leo", 21, "AU"));
+		cyclists.add(new Cyclist("C03", "Neo", 20, "CA"));
+		cyclists.add(new Cyclist("C04", "Mike", 22, "CN"));
+		
+		
+		swimmingGame = new Swimming();
+		for (Athlete a : swimmers) {
+			swimmingGame.addParticipant(a);
+			all.add(a);
+		}
+		
+		
+		runningGame = new Running();
+		for (Athlete a : sprinters) {
+			runningGame.addParticipant(a);
+			all.add(a);
+		}
+		
+		cyclingGame = new Cycling();
+		for (Athlete a : cyclists) {
+			cyclingGame.addParticipant(a);
+			all.add(a);
+		}
+		
+	}
+	
+	
+	
+	public void showMenu() {
+		
+		System.out.println("Ozlympic Game");
+		System.out.println("===================================\n" + 
+				"1.	Select a game to run\n" + 
+				"2.	Predict the winner of the game\n" + 
+				"3.	Start the game\n" + 
+				"4.	Display the final results of all games\n" + 
+				"5.	Display the points of all athletes\n" + 
+				"6.	Exit\n" + 
+				"\n");
+		System.out.print("Enter an option: ");
+		
+		
+	}
+	
+	public void showResult() {
+		
+		swimmingGame.showResult();
+		runningGame.showResult();
+		cyclingGame.showResult();
+		
+	}
+	
+	public void showAthletes() {
+		
+		System.out.println("All athletes points:");
+		for (Athlete p : all) {
+			
+			System.out.println(p);
+		}
+		
+		
+	}
+	
+	
+	public static void main(String[] args) {
+		
+		Ozlympic ozlympic = new Ozlympic();
+		// TODO Auto-generated method stub
+		Scanner in = new Scanner(System.in);
+		int choice = 0;
+		
+		String currentGame = "";
+		String predictWinner = "";
+		
+		while (true) {
+			
+			ozlympic.showMenu();
+			
+			choice = Integer.parseInt(in.nextLine().trim());
+			
+			if (choice == 6) {
+				break;
+			}
+			
+			switch(choice) {
+			case 1:
+				System.out.print("Enter the game you want to run: ");
+				currentGame = in.nextLine().trim();	
+				break;
+			
+			case 2:
+				System.out.print("Enter the winner you guess: ");
+				predictWinner = in.nextLine().trim();
+				break;
+			case 3:
+				if (currentGame.equals("swimming")) {
+					ozlympic.swimmingGame.start();
+					if (ozlympic.swimmingGame.getWinner().getName().equals(predictWinner)) {
+						System.out.println("Congratulation! You guess is right");
+					}
+				} else if (currentGame.equals("cycling")) {
+					ozlympic.cyclingGame.start();
+					if (ozlympic.cyclingGame.getWinner().getName().equals(predictWinner)) {
+						System.out.println("Congratulation! You guess is right");
+					}
+				} else if (currentGame.equals("running")) {
+					ozlympic.runningGame.start();
+					if (ozlympic.runningGame.getWinner().getName().equals(predictWinner)) {
+						System.out.println("Congratulation! You guess is right");
+					}
+				}
+				
+				break;
+				
+			case 4:
+				ozlympic.showResult();
+				break;
+				
+			case 5:
+				ozlympic.showAthletes();
+				break;	
+			}
+			
+		}
+		
+		in.close();
+		
+		
+	}
+
+}

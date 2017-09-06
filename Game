@@ -1,0 +1,65 @@
+import java.util.ArrayList;
+import java.util.TreeMap;
+
+public abstract class Game {
+	
+	protected ArrayList<Athlete> participants;
+	
+	private Athlete winner;
+	
+	private Athlete[] top3;
+	
+	public Game() {
+		participants = new ArrayList<Athlete>();
+		top3 = new Athlete[3];
+	}
+	
+	
+	public void addParticipant(Athlete p) {
+		participants.add(p);
+	}
+	
+	public Athlete getWinner() {
+		
+		return winner;
+	}
+	
+	
+	public void showResult() {
+		for (Athlete p : top3) {
+			System.out.println(p);
+		}
+	}
+	
+	
+	public void start() {
+		
+		TreeMap<Integer, Athlete> rec = new TreeMap<Integer, Athlete>();
+		
+		for (Athlete p : participants) {
+			rec.put(p.compete(), p);
+		}
+		//System.out.println(rec);
+		int count = 0;
+		
+		for (int t : rec.keySet()) {
+			Athlete p = rec.get(t);
+			top3[count] = p;
+			count++;
+			if (count == 1) {
+				p.addPoints(5);
+				winner = p;
+			} else if (count == 2) {
+				p.addPoints(2);
+			} else {
+				p.addPoints(1);
+			}
+			if (count ==3) {
+				break;
+			}
+		}
+		// showResult();
+	}
+	
+	
+}

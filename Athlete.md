@@ -1,5 +1,4 @@
-# Assignment1-AP-
-for the AP assignment1
+
 import java.util.Random;
 
 public abstract class Athlete {

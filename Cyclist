@@ -1,0 +1,14 @@
+
+public class Cyclist extends Athlete {
+
+	public Cyclist(String _ID, String _name, int _age, String _state) {
+		super(_ID, _name, _age, _state);
+	}
+
+
+	public int compete() {
+		// TODO Auto-generated method stub
+		return 500 + rand.nextInt(301);
+	}
+
+}

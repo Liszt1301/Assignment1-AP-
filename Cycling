@@ -1,0 +1,21 @@
+
+public class Cycling extends Game {
+
+	
+	public void showResult() {
+		System.out.println("Cycling result: ");
+		super.showResult();
+		
+	}
+	
+	
+	public void start() {
+		// TODO Auto-generated method stub
+		System.out.println("Start the cycling");
+		super.start();
+	}
+
+	
+	
+	
+}

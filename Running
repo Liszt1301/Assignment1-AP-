@@ -1,0 +1,17 @@
+
+public class Running extends Game {
+
+	public void showResult() {
+		System.out.println("Running result: ");
+		super.showResult();
+		
+	}
+	
+	@Override
+	public void start() {
+		// TODO Auto-generated method stub
+		System.out.println("Start the running");
+		super.start();
+	}
+
+}

@@ -1,0 +1,17 @@
+
+
+public class SuperAthlete extends Athlete {
+	
+	
+	
+	public SuperAthlete(String _ID, String _name, int _age, String _state) {
+		super(_ID, _name, _age, _state);
+	}
+
+	@Override
+	public int compete() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

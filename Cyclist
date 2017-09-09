@@ -1,5 +1,6 @@
 
-public class Cyclist extends Athlete {
+
+public class Cyclist extends Athlete implements compete {
 
 	public Cyclist(String _ID, String _name, int _age, String _state) {
 		super(_ID, _name, _age, _state);

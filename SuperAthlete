@@ -1,6 +1,6 @@
 
 
-public class SuperAthlete extends Athlete {
+public class SuperAthlete extends Athlete implements compete {
 	
 	
 	
@@ -8,10 +8,23 @@ public class SuperAthlete extends Athlete {
 		super(_ID, _name, _age, _state);
 	}
 
-	@Override
+	
 	public int compete() {
 		// TODO Auto-generated method stub
-		return 0;
+		
+		String currentGame = "";
+		if (currentGame.equals("swimming")) {
+			return 100 + rand.nextInt(101);
+		}
+		
+		else if (currentGame.equals("cycling")) {
+			return 500 + rand.nextInt(301);
+		}
+		
+		else
+		
+			return 10 + rand.nextInt(11);
+		
 	}
 
 }

@@ -62,7 +62,7 @@ public abstract class Athlete {
 		
 		return points;
 	}
-	public abstract int compete();
+	
 	
 	
 	public String toString() {
@@ -70,3 +70,9 @@ public abstract class Athlete {
 		return String.format("<ID:%s, Name:%s, Age:%d, State:%s, Points:%d>", ID, name, age, state, points);
 	}
 }
+
+   interface compete{
+    	
+    	public abstract int compete();
+    	
+    }

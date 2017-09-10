@@ -24,19 +24,19 @@ public class Ozlympic {
 		swimmers.add(new Swimmer("S02", "Sam", 21, "AU"));
 		swimmers.add(new Swimmer("S03", "Peter", 20, "CA"));
 		swimmers.add(new Swimmer("S04", "Jim", 22, "CN"));
-		swimmers.add(new Swimmer("S05", "Jeo", 19, "US"));
+		swimmers.add(new SuperAthlete("SA01", "Jordan", 20, "US"));
 		
 		
 		sprinters.add(new Sprinter("R01", "Kate", 20, "US"));
 		sprinters.add(new Sprinter("R02", "Kitty", 21, "AU"));
 		sprinters.add(new Sprinter("R03", "Rose", 20, "CA"));
-		sprinters.add(new Sprinter("R04", "Jack", 22, "CN"));
+		sprinters.add(new SuperAthlete("SA02", "Pippen", 22, "US"));
 		
 		
 		cyclists.add(new Cyclist("C01", "Tom", 20, "US"));
 		cyclists.add(new Cyclist("C02", "Leo", 21, "AU"));
 		cyclists.add(new Cyclist("C03", "Neo", 20, "CA"));
-		cyclists.add(new Cyclist("C04", "Mike", 22, "CN"));
+		cyclists.add(new SuperAthlete("SA03", "Rodman", 20, "US"));
 		
 		
 		swimmingGame = new Swimming();

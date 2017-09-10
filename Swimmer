@@ -1,4 +1,4 @@
-public class Swimmer extends Athlete implements compete {
+public class Swimmer extends Athlete {
 
 	public Swimmer(String _ID, String _name, int _age, String _state) {
 		super(_ID, _name, _age, _state);

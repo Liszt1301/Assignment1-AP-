@@ -78,7 +78,7 @@ public class Ozlympic {
 		
 	}
 	
-	public void showResult() {
+	public void showResult() {             //only show the top3
 		
 		swimmingGame.showResult();
 		runningGame.showResult();

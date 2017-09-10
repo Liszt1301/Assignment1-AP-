@@ -1,4 +1,4 @@
-public class Sprinter extends Athlete implements compete {
+public class Sprinter extends Athlete {
 
 	public Sprinter(String _ID, String _name, int _age, String _state) {
 		super(_ID, _name, _age, _state);

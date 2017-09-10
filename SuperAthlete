@@ -1,6 +1,7 @@
 
 
-public class SuperAthlete extends Athlete implements compete {
+
+public class SuperAthlete extends Athlete  {
 	
 	
 	
@@ -13,17 +14,18 @@ public class SuperAthlete extends Athlete implements compete {
 		// TODO Auto-generated method stub
 		
 		String currentGame = "";
-		if (currentGame.equals("swimming")) {
-			return 100 + rand.nextInt(101);
+		if (currentGame.equals("running")) {
+			return 10 + rand.nextInt(11);
 		}
 		
 		else if (currentGame.equals("cycling")) {
 			return 500 + rand.nextInt(301);
 		}
 		
+		
 		else
 		
-			return 10 + rand.nextInt(11);
+			return 100 + rand.nextInt(101);
 		
 	}
 

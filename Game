@@ -25,7 +25,7 @@ public abstract class Game {
 	}
 	
 	
-	public void showResult() {
+	public void showResult() {                    //only dispaly the top3 on result
 		for (Athlete p : top3) {
 			System.out.println(p);
 		}
@@ -34,17 +34,17 @@ public abstract class Game {
 	
 	public void start() {
 		
-		TreeMap<Integer, Athlete> rec = new TreeMap<Integer, Athlete>();
+		TreeMap<Integer, Athlete> rec = new TreeMap<Integer, Athlete>(); 
 		
 		for (Athlete p : participants) {
-			rec.put(p.compete(), p);
+			rec.put(p.compete(), p);     // value sorting
 		}
-		//System.out.println(rec);
+		
 		int count = 0;
 		
-		for (int t : rec.keySet()) {
+		for (int t : rec.keySet()) {          //add points to athlete depends on their ranking
 			Athlete p = rec.get(t);
-			top3[count] = p;
+			top3[count] = p;           
 			count++;
 			if (count == 1) {
 				p.addPoints(5);
@@ -58,7 +58,7 @@ public abstract class Game {
 				break;
 			}
 		}
-		// showResult();
+		
 	}
 	
 	
